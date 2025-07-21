@@ -3,18 +3,28 @@ print("Welcome to SMR V1")
 number_of_player_s= input("Enter the No of Players :")
 number_of_player = int(number_of_player_s)
 names = input("Enter the Names").split()
+score = input("Enter the score").split()
+score_n = []
+for x in score:
+    score_n.append(int(x))
+print(score_n)
+
+
 #Converts List Names into a dictionary with name and points stored together
 player_detail = { 
     index: {'name': name, 'score': 0}
     for index, name in enumerate(names)
 }
 
+for x in player_detail:
+    player_detail[x]['score'] = score_n[x] 
+
 
 #just test variables
-player_detail[0]['score'] += 30
-player_detail[1]['score'] += 10
-player_detail[2]['score'] += 20
-player_detail[3]['score'] += 40
+player_detail[0]['score'] += 0
+player_detail[1]['score'] += 0
+player_detail[2]['score'] += 0
+player_detail[3]['score'] += 0
 
 
 
@@ -53,6 +63,3 @@ else:
 update_sorted_list = {k:v for k,v in sorted(sorted_list.items(),key=lambda final:final[1]['score'] , reverse=True)}
 print("The final rank List is : ")
 print(update_sorted_list)
-
-
-
