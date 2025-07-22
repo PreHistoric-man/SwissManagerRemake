@@ -33,39 +33,78 @@ for x in player_detail:
 #sorting thing(descending order)
 sorted_list = {k:v for k,v in sorted(player_detail.items(),key = lambda v:v[1]['score'] , reverse=True)}
 print(sorted_list)
-
+#Round Robin Structure
 #paring players Higher Initial points paired together
-if number_of_player == 6:
-    game1 = [sorted_list[5],sorted_list[4]]
-    game2 = [sorted_list[3] , sorted_list[2]]
-    game3 = [sorted_list[1] , sorted_list[0]]
-    ans1 = input("Who Won Game-1 Press 1 for 5 and Press 2 for 4 ")
-    if(ans1 == '1'):
-        game1win = [sorted_list[5]]
-        sorted_list[5]['score'] += 10
-        sorted_list[4]['score'] -= 20
-    elif(ans1 == '2'):
-        game1win = [sorted_list[4]]
-        sorted_list[4]['score'] += 10
-        sorted_list[5]['score'] -= 20
-    ans2  = input("Who won game-2 press 1 for 3 and 2 for 2")
-    if(ans2 == '1'):
-        game2win = [sorted_list[3]]
-        sorted_list[3]['score'] += 10
-        sorted_list[2]['score'] -= 20
-    elif(ans2 == '2'):
-        game2win = [sorted_list[2]]
-        sorted_list[2]['score'] += 10
-        sorted_list[3]['score'] -= 20
-    ans3  = input("Who won game-3 press 1 for 1 and 2 for 0")
-    if(ans3 == '1'):
-        game3win = [sorted_list[1]]
-        sorted_list[1]['score'] += 10
-        sorted_list[0]['score'] -= 20
-    elif(ans3 == '2'):
-        game3win = [sorted_list[0]]
-        sorted_list[0]['score'] += 10
-        sorted_list[1]['score'] -= 20
+match number_of_player:
+    case 6:
+
+        game1 = [sorted_list[5],sorted_list[4]]
+        game2 = [sorted_list[3] , sorted_list[2]]
+        game3 = [sorted_list[1] , sorted_list[0]]
+        ans1 = input("Who Won Game-1 Press 1 for 5 and Press 2 for 4 ")
+        if(ans1 == '1'):
+            game1win = [sorted_list[5]]
+            sorted_list[5]['score'] += 10
+            sorted_list[4]['score'] -= 20
+        elif(ans1 == '2'):
+            game1win = [sorted_list[4]]
+            sorted_list[4]['score'] += 10
+            sorted_list[5]['score'] -= 20
+        ans2  = input("Who won game-2 press 1 for 3 and 2 for 2")
+        if(ans2 == '1'):
+            game2win = [sorted_list[3]]
+            sorted_list[3]['score'] += 10
+            sorted_list[2]['score'] -= 20
+        elif(ans2 == '2'):
+            game2win = [sorted_list[2]]
+            sorted_list[2]['score'] += 10
+            sorted_list[3]['score'] -= 20
+        ans3  = input("Who won game-3 press 1 for 1 and 2 for 0")
+        if(ans3 == '1'):
+            game3win = [sorted_list[1]]
+            sorted_list[1]['score'] += 10
+            sorted_list[0]['score'] -= 20
+        elif(ans3 == '2'):
+            game3win = [sorted_list[0]]
+            sorted_list[0]['score'] += 10
+            sorted_list[1]['score'] -= 20
+    case 7:
+        game1 = [sorted_list[6],sorted_list[5]]
+        game2 = [sorted_list[4] , sorted_list[3]]
+        game3 = [sorted_list[2] , sorted_list[1]]
+        sorted_list.pop(0)
+        ans1 = input("Who Won Game-1 Press 1 for 6 and Press 2 for 5 ")
+        if(ans1 == '1'):
+            game1win = [sorted_list[6]]
+            sorted_list[6]['score'] += 10
+            sorted_list[5]['score'] -= 20
+        elif(ans1 == '2'):
+            game1win = [sorted_list[5]]
+            sorted_list[5]['score'] += 10
+            sorted_list[6]['score'] -= 20
+        ans2  = input("Who won game-2 press 1 for 4 and 2 for 3")
+        if(ans2 == '1'):
+            game2win = [sorted_list[4]]
+            sorted_list[4]['score'] += 10
+            sorted_list[3]['score'] -= 20
+        elif(ans2 == '2'):
+            game2win = [sorted_list[3]]
+            sorted_list[3]['score'] += 10
+            sorted_list[4]['score'] -= 20
+        ans3  = input("Who won game-3 press 1 for 2 and 2 for 1")
+        if(ans3 == '1'):
+            game3win = [sorted_list[2]]
+            sorted_list[2]['score'] += 10
+            sorted_list[1]['score'] -= 20
+        elif(ans3 == '2'):
+            game3win = [sorted_list[1]]
+            sorted_list[1]['score'] += 10
+            sorted_list[2]['score'] -= 20
+
+    
+
+
+
     
 
 
